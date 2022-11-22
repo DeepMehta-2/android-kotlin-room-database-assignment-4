@@ -2,9 +2,10 @@ package com.example.deepmehta_mapd711_assignment4.entity
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity
+import androidx.room.Index
 import androidx.room.PrimaryKey
 
-@Entity
+@Entity(indices = [Index(value = ["userName"], unique = true)])
 data class Customer(
     @ColumnInfo(name = "userName") val userName: String,
     @ColumnInfo(name = "password") val password: String,
