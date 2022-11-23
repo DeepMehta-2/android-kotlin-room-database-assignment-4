@@ -59,9 +59,8 @@ class OrderListAdapter(
         val formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")
         val orderDateTime = LocalDateTime.parse(orderDate, formatter)
 
-        view.findViewById<TextView>(R.id.orderStatus).text = orderList[position].orderDate
-        view.findViewById<TextView>(R.id.orderStatus).text =
-            context.getString(R.string.orderStatus) + " " + orderList[position].status
+        view.findViewById<TextView>(R.id.date).text = orderList[position].orderDate
+        view.findViewById<TextView>(R.id.orderStatus).text = context.getString(R.string.orderStatus) + " " + orderList[position].status
 
         val cancelBtn = view.findViewById<Button>(R.id.cancelOrderBtn)
 
